@@ -1,0 +1,85 @@
+---
+const navItems = [
+  { name: "Inicio", href: "/" },
+  { name: "Acerca de", href: "/acerca" },
+  { name: "Productos", href: "/productos" },
+  { name: "Servicios", href: "/servicios" },
+  { name: "Contacto", href: "/contacto" },
+];
+
+const currentPath = Astro.url.pathname;
+const isHome = currentPath === "/";
+---
+
+<header
+  class={`${
+    isHome ? "fixed" : ""
+  } w-full top-0 left-0 z-50 p-4 md:px-6 md:py-6 transition-colors duration-300 ${
+    isHome ? "bg-transparent" : "bg-base-200"
+  }`}
+>
+  <div class="flex justify-between items-center">
+    <!-- Logo -->
+    <a
+      href="/"
+      class="text-2xl text-base-content font-bold flex items-center space-x-2"
+    >
+      <span>KOYARUNA</span>
+    </a>
+
+    <!-- Botón del menú para móviles -->
+    <button id="menu-button" class="md:hidden text-base-content">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-7 w-7"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+
+    <!-- Navbar Items -->
+    <nav
+      id="nav-menu"
+      class="absolute md:static top-16 left-0 w-full bg-base-100 md:bg-transparent
+           md:flex md:w-auto space-y-4 md:space-y-0 md:space-x-6 p-6 md:p-0
+           transition-all transform -translate-x-full md:translate-x-0"
+    >
+      {
+        navItems.map((item) => (
+          <a
+            href={item.href}
+            class={`block md:inline font-thin transition-colors duration-200 ${
+              currentPath === item.href
+                ? "text-primary font-bold"
+                : "text-base-content hover:text-primary"
+            }`}
+          >
+            {item.name.toUpperCase()}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+</header>
+
+<!-- Script para manejar el menú en móviles -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuButton = document.getElementById("menu-button");
+    const navMenu = document.getElementById("nav-menu");
+
+    menuButton?.addEventListener("click", () => {
+      const isOpen = navMenu?.classList.contains("translate-x-0");
+      navMenu?.classList.toggle("translate-x-0", !isOpen);
+      navMenu?.classList.toggle("-translate-x-full", isOpen);
+    });
+  });
+</script>

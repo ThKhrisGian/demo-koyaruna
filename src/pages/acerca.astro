@@ -1,0 +1,45 @@
+---
+import Layout from "../layouts/Layout.astro";
+import HeroSection from "../components/HeroSection.astro";
+import CompromisoSection from "../components/CompromisoSection.astro";
+const backgroundImage =
+  "https://images.pexels.com/photos/31244753/pexels-photo-31244753.jpeg";
+---
+
+<Layout>
+  <HeroSection />
+  <CompromisoSection />
+  <section class="relative bg-base-100 text-center py-24">
+    <!-- Fondo con efecto parallax -->
+    <div
+      class="absolute inset-0 bg-cover bg-center bg-fixed"
+      style={`background-image: url(${backgroundImage})`}
+    >
+    </div>
+
+    <!-- Capa oscura para mejor contraste -->
+    <div class="absolute inset-0 bg-black/50"></div>
+
+    <!-- Contenido -->
+    <div
+      class="relative container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 px-6 text-neutral"
+    >
+      <div>
+        <h2 class="text-5xl font-bold text-primary">250</h2>
+        <p class="uppercase text-lg">Environment Friendly</p>
+      </div>
+      <div>
+        <h2 class="text-5xl font-bold text-primary">302</h2>
+        <p class="uppercase text-lg">Staff Members</p>
+      </div>
+      <div>
+        <h2 class="text-5xl font-bold text-primary">15</h2>
+        <p class="uppercase text-lg">Million Man-Hours</p>
+      </div>
+      <div>
+        <h2 class="text-5xl font-bold text-primary">99</h2>
+        <p class="uppercase text-lg">Awards Won</p>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,21 @@
+{
+    "company": {
+      "name": "Koyaruna Ingenieros",
+      "url": "https://www.koyaruna.com",
+      "email": "ventas@koyaruna.com",
+      "phone": ["945131809", "950274863"],
+      "address": "URB. GIRASOLES DE LA MOLINA LOTE 17 MZ K LA MOLINA - LIMA - LIMA",
+      "description":"Koyaruna ofrece aceros de perforación, ingeniería metalmecánica y soluciones industriales para minería y construcción. Calidad certificada y máxima eficiencia."
+    },
+    "meta": {
+      "title": "Koyaruna | Aceros de Perforación y Soluciones Metalmecánicas",
+      "description": "Koyaruna ofrece aceros de perforación, ingeniería metalmecánica y soluciones industriales para minería y construcción. Calidad certificada y máxima eficiencia.",
+      "keywords": ["aceros de perforación", "ingeniería metalmecánica", "ventilación para minería", "suministros industriales"]
+    },
+    "author": {
+      "name": "Zona Tec Perú",
+      "url": "https://www.zonatecperu.com",
+      "phone": "999999999"
+    }
+  }
+  

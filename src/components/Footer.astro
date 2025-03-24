@@ -1,0 +1,102 @@
+---
+import siteData from "../data/site.json";
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-base-200 text-base-content pt-12">
+  <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 px-6">
+    <!-- Logo y descripción -->
+    <div>
+      <div class="flex items-center space-x-2 mb-4">
+        <span class="text-primary text-3xl">⬢</span>
+        <span class="text-neutral text-xl font-bold"
+          >{siteData.company.name}</span
+        >
+      </div>
+      <p class="text-base-300">
+        {siteData.company.description}
+      </p>
+    </div>
+
+    <!-- Navegación -->
+    <div>
+      <h3 class="text-neutral font-semibold mb-4">NAVIGATION</h3>
+      <ul class="space-y-2">
+        <li>
+          <a href="#" class="text-primary hover:text-primary-content"
+            >Industry News</a
+          >
+        </li>
+        <li>
+          <a href="#" class="text-primary hover:text-primary-content"
+            >Projects in Development</a
+          >
+        </li>
+        <li>
+          <a href="#" class="text-primary hover:text-primary-content"
+            >Completed Projects</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <!-- Publicaciones recientes -->
+    <div>
+      <h3 class="text-neutral font-semibold mb-4">RECENT POSTS</h3>
+      <ul class="space-y-3">
+        <li>
+          <p class="text-neutral">Future Proofing Hospitals</p>
+          <p class="text-base-300 text-sm">
+            Posted by <span class="text-primary">admin</span>
+          </p>
+        </li>
+        <li>
+          <p class="text-neutral">Bike Parts Warehouse, DE</p>
+          <p class="text-base-300 text-sm">
+            Posted by <span class="text-primary">admin</span>
+          </p>
+        </li>
+        <li>
+          <p class="text-neutral">Joy Hotel & Casino</p>
+          <p class="text-base-300 text-sm">
+            Posted by <span class="text-primary">admin</span>
+          </p>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Contacto -->
+    <div>
+      <h3 class="text-neutral font-semibold mb-4">CONTACTS</h3>
+      <p class="text-base-300">Dirección: {siteData.company.address}</p>
+      <p class="text-base-300">
+        Teléfonos:
+        <span class="text-primary"> {siteData.company.phone[0]}</span>;
+        <span class="text-primary"> {siteData.company.phone[1]}</span>
+      </p>
+      <p class="text-base-300">
+        E-mail:
+        <a
+          href="mailto:info@demolink.org"
+          class="text-primary hover:text-primary-content"
+        >
+          {siteData.company.email}
+        </a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Copyright y crédito de desarrollo -->
+  <div
+    class="bg-base-100 text-base-300 border-t border-base-300 mt-8 py-6 text-center flex flex-col md:flex-row justify-between items-center px-6"
+  >
+    <p>
+      &copy; {currentYear}
+      <span class="text-primary">{siteData.company.name}</span>. All rights
+      reserved.
+    </p>
+    <p class="mt-4 md:mt-0">
+      Desarrollado por <span class="text-primary">Zona Tec Perú</span>
+    </p>
+  </div>
+</footer>

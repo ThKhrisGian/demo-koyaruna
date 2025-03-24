@@ -1,0 +1,26 @@
+---
+const backgroundImage =
+  "https://images.pexels.com/photos/31244753/pexels-photo-31244753.jpeg";
+---
+
+<section
+  class="relative h-screen flex items-center justify-center bg-[${backgroundImage})] bg-cover bg-center"
+  style={`background-image: url(${backgroundImage})`}
+>
+  <!-- Capa oscura -->
+  <div class="absolute inset-0 bg-black/30"></div>
+
+  <!-- Contenido -->
+  <div class="relative z-10 text-center text-white px-6">
+    <h1 class="text-8xl font-bold mb-4">Bienvenido a Mi Sitio</h1>
+    <p class="text-4xl mb-6">
+      Explora contenido increíble y vive una experiencia única.
+    </p>
+    <a
+      href="#explorar"
+      class="bg-primary hover:bg-accent text-primary-content hover:text-accent-content font-semibold py-4 px-8 rounded-md transition"
+    >
+      Ver productos
+    </a>
+  </div>
+</section>

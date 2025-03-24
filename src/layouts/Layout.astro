@@ -1,0 +1,64 @@
+---
+import "../styles/global.css";
+import siteData from "../data/site.json";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- SEO Meta Tags -->
+    <title>{siteData.meta.title}</title>
+    <meta name="description" content={siteData.meta.description} />
+    <meta name="keywords" content={siteData.meta.keywords.join()} />
+    <meta name="author" content={siteData.author.name} />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph (Para compartir en Facebook, LinkedIn) -->
+    <meta property="og:title" content={siteData.meta.title} />
+    <meta
+      property="og:description"
+      content="Soluciones industriales de alto rendimiento en perforación y metalmecánica. Contacta a Koyaruna para mejorar tu productividad."
+    />
+    <meta
+      property="og:image"
+      content="https://www.koyaruna.com/imagen-destacada.jpg"
+    />
+    <meta property="og:url" content="https://www.koyaruna.com" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Cards (Para compartir en Twitter) -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={siteData.meta.title} />
+    <meta
+      name="twitter:description"
+      content="Expertos en aceros de perforación, ingeniería metalmecánica y ventilación para minería."
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.koyaruna.com/imagen-destacada.jpg"
+    />
+
+    <!-- Canonical (Evita contenido duplicado) -->
+    <link rel="canonical" href="https://www.koyaruna.com" />
+
+    <meta name="generator" content={Astro.generator} />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <Header />
+    <slot />
+    <Footer />
+  </body>
+</html>
