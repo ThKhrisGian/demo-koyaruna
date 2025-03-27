@@ -1,26 +1,68 @@
 ---
-const backgroundImage =
-  "https://images.pexels.com/photos/31244753/pexels-photo-31244753.jpeg";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/autoplay";
+
+import imgBanner1 from "../images/banner/bimg-01.webp";
+import imgBanner2 from "../images/banner/bimg-02.webp";
+import imgBanner3 from "../images/banner/bimg-03.webp";
+import imgBanner4 from "../images/banner/bimg-04.webp";
+
+const slides = [
+  { image: imgBanner1, title: "KOYARUNA INGENIEROS", subtitle: "Innovación y precisión en perforación y metalmecánica" },
+  { image: imgBanner2, title: "Certificaciones con lo último en tecnología", subtitle: "Equipos diseñados con precisión y eficiencia" },
+  { image: imgBanner3, title: "PRODUCTOS DE CALIDAD", subtitle: "Cumpliendo los rigurosos procesos y protocolos de fabricación" },
+  { image: imgBanner4, title: "Asesorías con un equipo altamente calificado", subtitle: "Más de 20 años en el sector" }
+];
 ---
 
-<section
-  class="relative h-screen flex items-center justify-center bg-[${backgroundImage})] bg-cover bg-center"
-  style={`background-image: url(${backgroundImage})`}
->
-  <!-- Capa oscura -->
-  <div class="absolute inset-0 bg-black/30"></div>
+<section class="relative min-h-screen w-full">
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      {slides.map(({ image, title, subtitle }) => (
+        <div 
+          class="swiper-slide relative min-h-screen w-full flex items-center justify-center bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url('${image.src}')` }}>
+          
+          <!-- Capa oscura -->
+          <div class="absolute inset-0 bg-black/50"></div>
 
-  <!-- Contenido -->
-  <div class="relative z-10 text-center text-white px-6">
-    <h1 class="text-8xl font-bold mb-4">KOYARUNA INGENIEROS</h1>
-    <p class="text-4xl mb-6">
-      Innovación y precisión en perforación y metalmecánica
-    </p>
-    <a
-      href="#explorar"
-      class="bg-primary hover:bg-accent text-primary-content hover:text-accent-content font-semibold py-4 px-8 rounded-md transition"
-    >
-      Ver productos
-    </a>
+          <!-- Contenido centrado -->
+          <div class="relative z-10 min-h-screen text-center text-white px-4 sm:px-6 flex flex-col items-center justify-center h-full">
+            <h1 class="text-4xl sm:text-6xl md:text-8xl font-bold mb-2 sm:mb-4">{title}</h1>
+            <p class="text-lg sm:text-2xl md:text-4xl mb-4 sm:mb-6">{subtitle}</p>
+            {/* <a href="#explorar" 
+               class="bg-primary hover:bg-accent text-primary-content hover:text-accent-content font-semibold py-3 px-6 sm:py-4 sm:px-8 rounded-md transition text-sm sm:text-base">
+              Ver productos
+            </a> */}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Botones de navegación -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
   </div>
 </section>
+
+<script>
+  import Swiper from "swiper";
+  import { Navigation, Autoplay } from "swiper/modules";
+
+  const swiper = new Swiper(".swiper", {
+    modules: [Navigation, Autoplay],
+    loop: true,
+    navigation: {
+      prevEl: ".swiper-button-prev",
+      nextEl: ".swiper-button-next",
+    },
+  });
+</script>
+
+<style>
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: white;
+  }
+</style>

@@ -3,14 +3,15 @@ import siteData from "../data/site.json";
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="bg-base-200 text-base-content pt-12">
-  <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 px-6">
+<footer class="bg-base-200 text-base-content">
+  <div
+    class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 px-12 py-32"
+  >
     <!-- Logo y descripción -->
     <div>
       <div class="flex items-center space-x-2 mb-4">
-        <span class="text-primary text-3xl">⬢</span>
-        <span class="text-neutral text-xl font-bold"
-          >{siteData.company.name}</span
+        <span class="text-neutral text-2xl font-bold"
+          >{siteData.company.name.toUpperCase()}</span
         >
       </div>
       <p class="text-base-300">
@@ -20,7 +21,7 @@ const currentYear = new Date().getFullYear();
 
     <!-- Navegación -->
     <div>
-      <h3 class="text-neutral font-semibold mb-4">NAVIGATION</h3>
+      <h3 class="text-lg text-neutral font-semibold mb-4">NAVIGATION</h3>
       <ul class="space-y-2">
         <li>
           <a href="#" class="text-primary hover:text-primary-content"
@@ -42,7 +43,7 @@ const currentYear = new Date().getFullYear();
 
     <!-- Publicaciones recientes -->
     <div>
-      <h3 class="text-neutral font-semibold mb-4">RECENT POSTS</h3>
+      <h3 class="text-lg text-neutral font-semibold mb-4">RECENT POSTS</h3>
       <ul class="space-y-3">
         <li>
           <p class="text-neutral">Future Proofing Hospitals</p>
@@ -67,14 +68,14 @@ const currentYear = new Date().getFullYear();
 
     <!-- Contacto -->
     <div>
-      <h3 class="text-neutral font-semibold mb-4">CONTACTS</h3>
-      <p class="text-base-300">Dirección: {siteData.company.address}</p>
-      <p class="text-base-300">
+      <h3 class="text-lg text-neutral font-semibold mb-4">CONTACTO</h3>
+      <p class="text-base-300 mb-3">Dirección: {siteData.company.address}</p>
+      <p class="text-base-300 mb-3">
         Teléfonos:
         <span class="text-primary"> {siteData.company.phone[0]}</span>;
         <span class="text-primary"> {siteData.company.phone[1]}</span>
       </p>
-      <p class="text-base-300">
+      <p class="text-base-300 mb-3">
         E-mail:
         <a
           href="mailto:info@demolink.org"
@@ -88,7 +89,7 @@ const currentYear = new Date().getFullYear();
 
   <!-- Copyright y crédito de desarrollo -->
   <div
-    class="bg-base-100 text-base-300 border-t border-base-300 mt-8 py-6 text-center flex flex-col md:flex-row justify-between items-center px-6"
+    class="bg-base-100 text-base-300 border-t border-base-300 mt-8 py-6 text-center flex flex-col md:flex-row justify-between items-center px-12"
   >
     <p>
       &copy; {currentYear}
