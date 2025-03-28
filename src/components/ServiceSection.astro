@@ -1,35 +1,45 @@
 ---
 import { getCollection } from "astro:content";
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 
 const servicios = await getCollection("servicios");
+console.log(servicios);
 ---
 
-<section class="py-12 bg-neutral text-neutral-content">
+<section class="py-16 px-6 bg-base-content text-base-content">
   <div class="container mx-auto text-center">
-    <h2 class="text-3xl font-bold text-neutral-content mb-6 relative inline-block">
-      <span class="block w-12 h-0.5 bg-primary mx-auto mt-2"></span>
-      SERVICIOS
+    <h2
+      class="text-3xl md:text-4xl font-bold text-neutral-content mb-12 relative inline-block uppercase tracking-wide"
+    >
+      <span class="block w-16 h-1 bg-primary mx-auto mt-3"></span>
+      Servicios
     </h2>
-    <div class="grid md:grid-cols-3 gap-8">
+    <div
+      class="grid grid-cols-1 sm:grid-cols-[repeat(auto-fit,minmax(290px,1fr))] gap-10 justify-center"
+    >
       {
         servicios.map((servicio) => (
-          <div class="flex flex-col items-center text-center">
-            <div class="w-64 h-64 mb-4 overflow-hidden rounded-lg">
-              <Image
-                src={servicio.data.img}
+          <div class="relative flex w-full sm:w-80 flex-col rounded-xl bg-neutral bg-clip-border text-neutral-content shadow-md mx-auto">
+            <div class="relative mx-4 -mt-6 h-40 overflow-hidden rounded-xl">
+              <img
+                src={"/../.." + servicio.data.img}
                 alt={servicio.data.title}
-                width={256}
-                height={256}
                 class="w-full h-full object-cover"
               />
             </div>
-            <h3 class="text-xl font-semibold text-neutral-content mt-4">
-              {servicio.data.title}
-            </h3>
-            <p class="text-base-content mt-2">
-              {servicio.data.detail}
-            </p>
+            <div class="p-6 text-left">
+              <h5 class="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-primary-content antialiased">
+                {servicio.data.title}
+              </h5>
+              <p class="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
+                {servicio.data.detail}
+              </p>
+            </div>
+            <div class="p-6 pt-0 text-left">
+              <button class="select-none rounded-lg bg-primary py-3 px-6 text-left align-middle font-sans text-xs font-bold uppercase text-primary-content shadow-md transition-all hover:shadow-lg focus:opacity-[0.85] active:opacity-[0.85] cursor-pointer">
+                Leer más
+              </button>
+            </div>
           </div>
         ))
       }

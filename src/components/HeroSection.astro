@@ -3,16 +3,16 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
 
-const img1 = "/images/banner/bimg-01.webp"
-const img2 = "/images/banner/bimg-02.webp"
-const img3 = "/images/banner/bimg-03.webp"
-const img4 = "/images/banner/bimg-04.webp"
+import imgBanner1 from "@/images/banner/bimg-01.webp";
+import imgBanner2 from "@/images/banner/bimg-02.webp";
+import imgBanner3 from "@/images/banner/bimg-03.webp";
+import imgBanner4 from "@/images/banner/bimg-04.webp";
 
 const slides = [
-  { image: img1, title: "KOYARUNA INGENIEROS", subtitle: "Innovación y precisión en metal metálica" },
-  { image: img2, title: "Certificaciones con lo último en tecnología", subtitle: "Equipos diseñados con precisión y eficiencia" },
-  { image: img3, title: "PRODUCTOS DE CALIDAD", subtitle: "Cumpliendo los rigurosos procesos y protocolos de fabricación" },
-  { image: img4, title: "Asesorías con un equipo altamente calificado", subtitle: "Más de 20 años en el sector" }
+  { image: imgBanner1, title: "KOYARUNA INGENIEROS", subtitle: "Innovación y precisión en perforación y metalmecánica" },
+  { image: imgBanner2, title: "Certificaciones con lo último en tecnología", subtitle: "Equipos diseñados con precisión y eficiencia" },
+  { image: imgBanner3, title: "PRODUCTOS DE CALIDAD", subtitle: "Cumpliendo los rigurosos procesos y protocolos de fabricación" },
+  { image: imgBanner4, title: "Asesorías con un equipo altamente calificado", subtitle: "Más de 20 años en el sector" }
 ];
 ---
 
@@ -22,7 +22,7 @@ const slides = [
       {slides.map(({ image, title, subtitle }) => (
         <div 
           class="swiper-slide relative min-h-screen w-full flex items-center justify-center bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url('${image}')` }}>
+          style={{ backgroundImage: `url('${image.src}')` }}>
           
           <!-- Capa oscura -->
           <div class="absolute inset-0 bg-black/50"></div>
